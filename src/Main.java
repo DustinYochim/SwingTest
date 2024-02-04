@@ -28,5 +28,15 @@ public class Main {
 
         frame.add(label);
         frame.setVisible(true); // make frame visible
+
+        // delay is going to be how long message shows before frame closes
+        int delay = 5000; // in milliseconds so 5 seconds
+        Timer timer = new Timer(delay, e -> {
+            frame.dispose(); // Close the frame
+        });
+
+
+        timer.setRepeats(false); // only run timer one time
+        timer.start(); // Start the timer
     }
 }
